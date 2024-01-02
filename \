@@ -27,8 +27,8 @@ def download_image_buffer(item):
 
 if __name__ == "__main__":
 
-    _start = 400000
-    _end = 500000
+    _start = 100000
+    _end = 200000
 
     print("loading urls")
     with open("./datasets/conceptual-12m/cc12m.tsv", "r", encoding="utf-8") as dataset_file:

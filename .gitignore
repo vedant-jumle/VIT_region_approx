@@ -164,6 +164,7 @@ cython_debug/
 *.jpg
 *.tsv
 *.csv
+*.gz
 datasets/
 checkpoints/
 model_weights/

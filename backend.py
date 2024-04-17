@@ -115,7 +115,7 @@ def extract_roi(image, processor, tokenizer, model):
                 token = sampled_ids[token_count]
                 token_value = tokenizer.decode(token)
 
-                attention_scores = attention_weights['cross_attention'][token_count][-1, :, 0, 1:] # [last layer, all heads, first context token, ignore cls]
+                attention_scores = attention_weights['cross_attention'][token_count][-1, :, -1, 1:] # [last layer, all heads, first context token, ignore cls]
                 attention_scores = np.reshape(attention_scores, (num_heads, w_featmap, h_featmap))
                 attention_scores = np.transpose(attention_scores, (1, 2, 0))
                 attention_scores = ops.image.resize(attention_scores, size=(h_featmap * patch_size, w_featmap * patch_size)).cpu().numpy()

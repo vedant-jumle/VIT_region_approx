@@ -106,7 +106,7 @@ def extract_roi(image, processor, tokenizer, model):
 
     n_cols = 4
     n_rows = (len(sampled_ids)//4)+1
-    fig, axes = plt.subplots(nrows=3, ncols=4, figsize=(13, 13))
+    fig, axes = plt.subplots(nrows=n_rows, ncols=n_cols, figsize=(13, 13))
     token_count = 0
 
     for i in range(n_rows):
